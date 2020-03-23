@@ -40,7 +40,7 @@ torch.int8
 **Following is what you need for this book:**
 Computer vision professionals, data scientists, deep learning engineers, and AI developers looking for quick solutions for various computer vision problems will find this book useful. Intermediate-level knowledge of computer vision concepts, along with Python programming experience is required.
 
-With the following software and hardware list you can run all code files present in the book (Chapter 1-11).
+With the following software and hardware list you can run all code files present in the book (Chapter 1-10).
 
 ### Software and Hardware List
 
