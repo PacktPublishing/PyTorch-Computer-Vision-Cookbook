@@ -1,0 +1,9 @@
+For Linux users, you can use conda_pytorch.yml to create the conda environment used for this book.
+ 
+$ conda env create -f conda_pytorch.yml
+
+This will create the conda-pytorch environment that you can activate using the following command:
+
+$ source activate conda-pytorch
+
+and then run the scripts of this book.
