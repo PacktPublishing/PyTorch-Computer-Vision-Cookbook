@@ -55,6 +55,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 * Page 187 (Bullet point 1, second code block): 
 
 **# Remove empty boxes**
+
 **targets = [boxes for boxes in targets if boxes is not None]**  is logically incorrect but it is valid for this example.
 
 **Explaination**: If there is any target that is None, the function will remove it first, resulting in a list with fewer than 8 elements. Then when we assign the index to every element in the list, the index will not reflect the order of the images, because we have already removed some target. For example:
