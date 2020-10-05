@@ -50,6 +50,31 @@ With the following software and hardware list you can run all code files present
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781838644833_ColorImages.pdf).
 
+## Errata
+
+* Page 187 (Bullet point 1, second code block): 
+
+**# Remove empty boxes**
+**targets = [boxes for boxes in targets if boxes is not None]**  is logically incorrect but it is valid for this example.
+
+**Explaination**: If there is any target that is None, the function will remove it first, resulting in a list with fewer than 8 elements. Then when we assign the index to every element in the list, the index will not reflect the order of the images, because we have already removed some target. For example:
+
+`targets = [bbox0, bbox1, bbox2, None, bbox4, bbox5, bbox6, bbox7]`
+
+after removing the None element:
+
+`targets = [bbox0, bbox1, bbox2, bbox4, bbox5, bbox6, bbox7]`
+
+then we assign them the index which should be (indexes are in the parentheses):
+
+`targets = [bbox0 (0), bbox1 (1), bbox2 (2), bbox4 (4), bbox5 (5), bbox6 (6), bbox7 (7)]`
+
+but the program now will assign (index are in the parentheses):
+
+`targets = [bbox0 (0), bbox1 (1), bbox2 (2), bbox4 (3), bbox5 (4), bbox6 (5), bbox7 (6)]`
+
+The reason it is valid here, is, for the dataset used in the chapter, there is no target that is `None`, so the function will not remove any element from the list. 
+
 
 ### Related products <Other books you may enjoy>
 * Deep Learning with PyTorch 1.x - Second Edition [[Packt]](https://www.packtpub.com/data/deep-learning-with-pytorch-1-0-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781838553005) [[Amazon]](https://www.amazon.com/Deep-Learning-PyTorch-1-x-architecture/dp/1838553002)
